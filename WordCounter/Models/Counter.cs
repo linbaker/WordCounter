@@ -28,8 +28,7 @@ namespace WordCounter
       string[] lowerSentenceArray = lowerSentence.Split(' ');
       foreach(string compareWord in lowerSentenceArray)
       {
-        PunctuationRemover(compareWord);
-        if(compareWord == lowerWord || compareWord == String.Concat(lowerWord + "."))
+        if(PunctuationRemover(compareWord) == lowerWord || compareWord == String.Concat(lowerWord + "."))
         {
           _score ++;
         }
