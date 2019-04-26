@@ -26,5 +26,11 @@ namespace WordCounterTest
       Counter newCounter = new Counter();
       Assert.AreEqual(1, newCounter.RepeatCounter("hello", "HeLlO"));
     }
+    [TestMethod]
+    public void SentenceContains_InputWordSentence_ScoreTwo()
+    {
+      Counter newCounter = new Counter();
+      Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello"));
+    }
   }
 }

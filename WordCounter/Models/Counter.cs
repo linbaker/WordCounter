@@ -4,14 +4,19 @@ namespace WordCounter
   public class Counter
   {
 
+    int score = 0;
     public int RepeatCounter(string word, string sentence)
     {
-      int score = 0;
       string lowerWord = word.ToLower();
       string lowerSentence = sentence.ToLower();
-      if(lowerWord == lowerSentence)
+      string[] lowerSentenceArray = lowerSentence.Split(' ');
+      foreach(string compareWord in lowerSentenceArray)
       {
-        score += 1;
+        if(compareWord == lowerWord)
+        {
+          score ++;
+        }
+
       }
       return score;
     }
