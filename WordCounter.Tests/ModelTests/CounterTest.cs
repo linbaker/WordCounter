@@ -14,5 +14,11 @@ namespace WordCounterTest
       Counter newCounter = new Counter();
       Assert.AreEqual(0, newCounter.RepeatCounter("hello", "goodbye"));
     }
+    [TestMethod]
+    public void SentenceContains_InputMatch_ScoreOne()
+    {
+      Counter newCounter = new Counter();
+      Assert.AreEqual(1, newCounter.RepeatCounter("hello", "hello"));
+    }
   }
 }
