@@ -1,5 +1,7 @@
 # _Word Counter _
 
+https://github.com/linbaker/WordCounter
+
 #### _C# Testing Exercise for Epicodus, 04.26.2019_
 
 #### By _**Lindsey Baker**_
@@ -13,7 +15,6 @@ _This application take a word and sentence from a user and count how many times 
 * _Clone Repository_
 * _Compile in C# .Net Core 2.2_
 
-Intake word and compare to word add count 1
 
 
 |Behavior|Input|Output|
@@ -23,13 +24,13 @@ Intake word and compare to word add count 1
 |Input single word to compare to single word identical matching regardless of case, counts increases to 1 |"hello", "HeLlO"| 1 |
 |Input single word to compare to multiple words, count increases for every match |"hello", "HeLlO world I said hello"| 2 |
 |Input single word to compare to multiple words with period at the end of sentence, count increases for every match |"hello", "HeLlO world I said hello hello."| 3 |
-|Input single word to compare to multiple words with punctuation, count increases for every match |"cat", "Cat, the cat, thought 'I am the best cat!'""| 3
-
+|Input single word to compare to multiple words with punctuation, count increases for every match |"cat", "Cat, the cat, thought 'I am the best cat!'""| 3 |
+|Input single word to compare to multiple words with punctuation, count increases for every match |"good-bye", "I said 'Good-bye' waving good-bye"| 2 |
 
 
 ## Known Bugs
 
-__
+_Not all edge conditions are accounted, such as special characters and numbers in the inputted word, plurals or possessive words. _
 
 ## Support and contact details
 
