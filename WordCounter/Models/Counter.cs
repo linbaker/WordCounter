@@ -4,7 +4,7 @@ namespace WordCounter
   public class Counter
   {
     private int _score = 0;
-    private string _alphabet = "abcdefghijklmnopqrstuvwxyz";
+    private string _alphabet = "abcdefghijklmnopqrstuvwxyz-";
 
     public string PunctuationRemover(string punctuatonWord)
     {

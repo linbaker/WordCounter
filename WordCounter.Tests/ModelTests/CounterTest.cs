@@ -50,5 +50,11 @@ namespace WordCounterTest
       Counter newCounter = new Counter();
       Assert.AreEqual(3, newCounter.RepeatCounter("cat", "Cat, the cat, thought 'I am the best cat!'"));
     }
+    [TestMethod]
+    public void SentenceContains_AccountForHyphen_ScoreTwo()
+    {
+      Counter newCounter = new Counter();
+      Assert.AreEqual(2, newCounter.RepeatCounter("good-bye", "I said 'Good-bye' waving good-bye"));
+    }
   }
 }
