@@ -32,5 +32,11 @@ namespace WordCounterTest
       Counter newCounter = new Counter();
       Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello"));
     }
+    [TestMethod]
+    public void SentenceContains_InputWordSentenceWithPerion_ScoreTwo()
+    {
+      Counter newCounter = new Counter();
+      Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello."));
+    }
   }
 }

@@ -12,7 +12,7 @@ namespace WordCounter
       string[] lowerSentenceArray = lowerSentence.Split(' ');
       foreach(string compareWord in lowerSentenceArray)
       {
-        if(compareWord == lowerWord)
+        if(compareWord == lowerWord || compareWord == String.Concat(lowerWord + "."))
         {
           score ++;
         }
