@@ -38,5 +38,17 @@ namespace WordCounterTest
       Counter newCounter = new Counter();
       Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello."));
     }
+    [TestMethod]
+    public void SentenceContains_InputWordWithPunctuation_ScoreThree()
+    {
+      Counter newCounter = new Counter();
+      Assert.AreEqual("cat", newCounter.PunctuationRemover(",cat!"));
+    }
+    // [TestMethod]
+    // public void SentenceContains_InputWordSentenceWithPunctuation_ScoreThree()
+    // {
+    //   Counter newCounter = new Counter();
+    //   Assert.AreEqual(3, newCounter.RepeatCounter("cat", "Cat, the cat, thought 'I am the best cat!'"));
+    // }
   }
 }

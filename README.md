@@ -23,6 +23,7 @@ Intake word and compare to word add count 1
 |Input single word to compare to single word identical matching regardless of case, counts increases to 1 |"hello", "HeLlO"| 1 |
 |Input single word to compare to multiple words, count increases for every match |"hello", "HeLlO world I said hello"| 2 |
 |Input single word to compare to multiple words with period at the end of sentence, count increases for every match |"hello", "HeLlO world I said hello hello."| 3 |
+|Input single word to compare to multiple words with punctuation, count increases for every match |"cat", "Cat, the cat, thought 'I am the best cat!'""| 3
 
 
 
