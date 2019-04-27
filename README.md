@@ -30,7 +30,7 @@ _This application take a word and sentence from a user and count how many times 
 
 ## Known Bugs
 
-_Not all edge conditions are accounted, such as special characters and numbers in the inputted word, plurals or possessive words. _
+_Not all edge conditions are accounted, such as special characters and numbers in the inputted word, plurals or possessive words. Accented letters are also not accounted for._
 
 ## Support and contact details
 
