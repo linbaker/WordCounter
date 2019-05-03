@@ -1,10 +1,14 @@
 using System;
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class Counter
   {
     public string WordToCount {get; set;}
     public string SentenceToCheck {get; set;}
+    public static List<Counter> UserInput {get; set;} = new List<Counter> {};
+    public int Id {get; set;}
     private int _score = 0;
     private string _alphabet = "abcdefghijklmnopqrstuvwxyz-";
 
@@ -12,7 +16,18 @@ namespace WordCounter.Models
     {
       WordToCount = wordToCount.ToLower();
       SentenceToCheck = sentenceToCheck.ToLower();
+      UserInput.Add(this);
+      Id = UserInput.Count;
+    }
 
+    public static void RemoveCounter(int id)
+    {
+      UserInput.Remove(UserInput[id - 1]);
+    }
+
+    public static void ClearAll()
+    {
+      UserInput.Clear();
     }
 
     public string PunctuationRemover(string compareWord)

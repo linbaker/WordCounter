@@ -7,10 +7,13 @@ namespace WordCounter.Controllers
   public class CounterController : Controller
   {
     [HttpGet("/counter")]
-  public ActionResult Index()
-  {
-    return View();
-  }
+   public ActionResult Index()
+   {
+
+     List<Counter> allCounters = Counter.UserInput;
+     return View(allCounters);
+   }
+
     [HttpGet("/counter/new")]
   public ActionResult New()
   {
@@ -21,7 +24,7 @@ namespace WordCounter.Controllers
   public ActionResult Create(string wordToCount, string sentenceToCheck)
   {
     Counter myCounter = new Counter(wordToCount, sentenceToCheck);
-    return View(myCounter);
+    return RedirectToAction("Index");
   }
 
   }

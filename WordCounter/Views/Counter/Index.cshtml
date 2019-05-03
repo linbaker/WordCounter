@@ -8,10 +8,19 @@
 </head>
 <body>
 
-  <h1>Your Word Checker</h1>
-
-    <h2>@Model.WordToCount</h2>
-    <h2>@Model.SentenceToCheck</h2>
+<ul>
+@if (Model.Count == 0)
+{
+  <p>Please Enter a Word and Sentence to Check!</p>
+}
+@if(Model.Count != 0)
+{
+  @foreach (Counter counter in Model)
+  {
+    <li><a href='/counter/@counter.Id'>@counter.WordToCount</a></li>
+  }
+}
+</ul>
 
 
 
