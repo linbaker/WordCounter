@@ -1,36 +1,35 @@
 @using WordCounter.Models;
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-<body>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Counter List</title>
+  </head>
+  <body>
+    <h1>Here are your words!</h1>
 
-<ul>
-@if (Model.Count == 0)
-{
-  <p>Please Enter a Word and Sentence to Check!</p>
-}
-@if(Model.Count != 0)
-{
-  @foreach (Counter counter in Model)
-  {
-    <li>Your Word: @counter.WordToCount
-    <br>
-    Your Sentence: @counter.SentenceToCheck
-    <br>
-    Repeat Count: @counter.RepeatCounter()</li>
-    <form action="/counter/@counter.Id/delete" method="post"><button type="submit" name="button">Remove This One!</button></form>
-  }
-}
-</ul>
+    <ul>
+      @if (Model.Count == 0)
+      {
+        <p>Please Enter a Word and Sentence to Check!</p>
+      }
+      @if(Model.Count != 0)
+      {
+        @foreach (Counter counter in Model)
+        {
+          <li>Your Word: @counter.WordToCount
+          <br>
+          Your Sentence: @counter.SentenceToCheck
+          <br>
+          Repeat Count: @counter.RepeatCounter()</li>
+          <form action="/counter/@counter.Id/delete" method="post">
+            <button type="submit" name="button">Remove This One!</button>
+          </form>
+          }
+        }
+    </ul>
 
-
-
-  <a href="/counter/new">Check another word</a>
-
-  </form>
-</body>
+    <a href="/counter/new">Check another word</a>
+  </body>
 </html>
