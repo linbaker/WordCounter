@@ -17,7 +17,12 @@
 {
   @foreach (Counter counter in Model)
   {
-    <li><a href='/counter/@counter.Id'>@counter.WordToCount</a></li>
+    <li>Your Word: @counter.WordToCount
+    <br>
+    Your Sentence: @counter.SentenceToCheck
+    <br>
+    Repeat Count: @counter.RepeatCounter()</li>
+    <form action="/counter/@counter.Id/delete" method="post"><button type="submit" name="button">Remove This One!</button></form>
   }
 }
 </ul>
