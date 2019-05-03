@@ -10,6 +10,16 @@ namespace WordCounter.Tests
   public class CounterControllerTest
   {
     [TestMethod]
+    public void Index_HasCorrectModelType_ItemList()
+    {
+      CounterController controller = new CounterController();
+      ViewResult indexView = controller.Index() as ViewResult;
+
+      var result = indexView.ViewData.Model;
+
+      Assert.IsInstanceOfType(result, typeof(List<Counter>));
+    }
+    [TestMethod]
     public void Create_ReturnsCorrectActionType_RedirectToActionResult()
     {
       CounterController controller = new CounterController();
