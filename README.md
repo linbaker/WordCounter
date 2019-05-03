@@ -2,7 +2,7 @@
 
 https://github.com/linbaker/WordCounter
 
-#### _C# Testing Exercise for Epicodus, 04.26.2019_
+#### _C# Testing Exercise for Epicodus, 05.03.2019_
 
 #### By _**Lindsey Baker**_
 
