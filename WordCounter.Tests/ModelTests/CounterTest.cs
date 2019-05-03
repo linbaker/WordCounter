@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using WordCounter;
+using WordCounter.Models;
 
 namespace WordCounterTest
 {

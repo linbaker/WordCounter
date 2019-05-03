@@ -21,7 +21,7 @@ namespace WordCounter.Controllers
   public ActionResult Create(string wordToCount, string sentenceToCheck)
   {
     Counter myCounter = new Counter(wordToCount, sentenceToCheck);
-    return RedirectToAction("Index");
+    return View(myCounter);
   }
 
   }
