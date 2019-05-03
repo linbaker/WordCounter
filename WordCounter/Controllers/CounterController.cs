@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using WordCounter;
+using WordCounter.Models;
 using System.Collections.Generic;
 
 namespace WordCounter.Controllers
 {
   public class CounterController : Controller
   {
+    [HttpGet("/counter")]
+  public ActionResult Index()
+  {
+    return View();
+  }
     [HttpGet("/counter/new")]
   public ActionResult New()
   {
