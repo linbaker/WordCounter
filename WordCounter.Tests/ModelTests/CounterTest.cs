@@ -11,50 +11,50 @@ namespace WordCounterTest
     [TestMethod]
     public void SentenceContains_InputNonMatch_ScoreZero()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(0, newCounter.RepeatCounter("hello", "goodbye"));
+      Counter newCounter = new Counter("hello", "goodbye");
+      Assert.AreEqual(0, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_InputMatch_ScoreOne()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(1, newCounter.RepeatCounter("hello", "hello"));
+      Counter newCounter = new Counter("hello", "hello");
+      Assert.AreEqual(1, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_InputMatchCase_ScoreOne()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(1, newCounter.RepeatCounter("hello", "HeLlO"));
+      Counter newCounter = new Counter("hello", "HeLlO");
+      Assert.AreEqual(1, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_InputWordSentence_ScoreTwo()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello"));
+      Counter newCounter = new Counter("hello", "HeLlO world I said hello");
+      Assert.AreEqual(2, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_InputWordSentenceWithPerion_ScoreTwo()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(2, newCounter.RepeatCounter("hello", "HeLlO world I said hello."));
+      Counter newCounter = new Counter("hello", "HeLlO world I said hello.");
+      Assert.AreEqual(2, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_InputWordWithPunctuation_ScoreThree()
     {
-      Counter newCounter = new Counter();
+      Counter newCounter = new Counter("cat", "#cat");
       Assert.AreEqual("cat", newCounter.PunctuationRemover("#cat!"));
     }
     [TestMethod]
     public void SentenceContains_InputWordSentenceWithPunctuation_ScoreThree()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(3, newCounter.RepeatCounter("cat", "Cat, the cat, thought 'I am the best cat!'"));
+      Counter newCounter = new Counter("cat", "Cat, the cat, thought 'I am the best cat!'");
+      Assert.AreEqual(3, newCounter.RepeatCounter());
     }
     [TestMethod]
     public void SentenceContains_AccountForHyphen_ScoreTwo()
     {
-      Counter newCounter = new Counter();
-      Assert.AreEqual(2, newCounter.RepeatCounter("good-bye", "I said 'Good-bye' waving good-bye"));
+      Counter newCounter = new Counter("good-bye", "I said 'Good-bye' waving good-bye");
+      Assert.AreEqual(2, newCounter.RepeatCounter());
     }
   }
 }
