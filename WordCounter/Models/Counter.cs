@@ -3,12 +3,21 @@ namespace WordCounter
 {
   public class Counter
   {
+    public string WordToCount {get; set;}
+    public string SentenceToCheck {get; set;}
     private int _score = 0;
     private string _alphabet = "abcdefghijklmnopqrstuvwxyz-";
 
-    public string PunctuationRemover(string punctuatonWord)
+    public Counter (string wordToCount, string sentenceToCheck)
     {
-      char[] wordCharArray =punctuatonWord.ToCharArray();
+      WordToCount = wordToCount.ToLower();
+      SentenceToCheck = sentenceToCheck.ToLower();
+
+    }
+
+    public string PunctuationRemover(string compareWord)
+    {
+      char[] wordCharArray =compareWord.ToCharArray();
       string puncRemoved = "";
       for( int i = 0; i < wordCharArray.Length; i++)
       {
@@ -21,14 +30,12 @@ namespace WordCounter
       return puncRemoved;
     }
 
-    public int RepeatCounter(string word, string sentence)
+    public int RepeatCounter()
     {
-      string lowerWord = word.ToLower();
-      string lowerSentence = sentence.ToLower();
-      string[] lowerSentenceArray = lowerSentence.Split(' ');
-      foreach(string compareWord in lowerSentenceArray)
+      string[] SentenceArray = SentenceToCheck.Split(' ');
+      foreach(string compareWord in SentenceArray)
       {
-        if(PunctuationRemover(compareWord) == lowerWord)
+        if(PunctuationRemover(compareWord) == WordToCount)
         {
           _score ++;
         }
