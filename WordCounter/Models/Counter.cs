@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 namespace WordCounter.Models
@@ -9,8 +10,6 @@ namespace WordCounter.Models
     public string SentenceToCheck {get; set;}
     public static List<Counter> UserInput {get; set;} = new List<Counter> {};
     public int Id {get; set;}
-    private int _score = 0;
-    private string _alphabet = "abcdefghijklmnopqrstuvwxyz-";
 
     public Counter (string wordToCount, string sentenceToCheck)
     {
@@ -33,30 +32,31 @@ namespace WordCounter.Models
     public string PunctuationRemover(string compareWord)
     {
       char[] wordCharArray =compareWord.ToCharArray();
-      string puncRemoved = "";
-      for( int i = 0; i < wordCharArray.Length; i++)
+      StringBuilder builder = new StringBuilder();
+      foreach(char letter in wordCharArray)
       {
-        bool alphabetical = _alphabet.Contains(Char.ToString(wordCharArray[i]));
-        if(_alphabet.Contains(Char.ToString(wordCharArray[i])))
+        if(Char.IsLetter(letter))
         {
-          puncRemoved += wordCharArray[i];
+          builder.Append(letter);
         }
       }
+      string puncRemoved = builder.ToString();
       return puncRemoved;
     }
 
     public int RepeatCounter()
     {
+      int score = 0;
       string[] SentenceArray = SentenceToCheck.Split(' ');
       foreach(string compareWord in SentenceArray)
       {
-        if(PunctuationRemover(compareWord) == WordToCount)
+        if(PunctuationRemover(compareWord) == PunctuationRemover(WordToCount))
         {
-          _score ++;
+          score ++;
         }
 
       }
-      return _score;
+      return score;
     }
   }
 }
